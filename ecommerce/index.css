@@ -1,0 +1,261 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf") format(".ttf"),
+    url("./assets/fonts/Poppins-Medium.ttf") format(".ttf"),
+    url("./assets/fonts/Poppins-Bold.ttf") format(".ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* setting css to remove browser default css */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+button,
+input {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  background-color: transparent;
+}
+/* setting css to remove browser default css */
+
+/* wrapper for whole page */
+.wrapper {
+  height: 100%;
+}
+
+/* nav-css */
+header {
+  margin: 64px 0px;
+}
+nav {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 30;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+.nav-wrapper {
+  margin: 0px auto;
+  padding: 0px 8px;
+}
+.nav-list-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+}
+.brand-wrapper {
+  display: flex;
+  padding: 0px 8px;
+}
+.brand-content {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+.brand {
+  font-size: 36px;
+  font-weight: 700;
+}
+/* desktop navbar */
+.desktop-nav {
+  display: none;
+}
+.desktop-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 4px 0px 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3f3f3f;
+  margin-right: 24px;
+}
+.desktop-nav a:hover {
+  color: #1f1f1f;
+}
+.active-link {
+  font-weight: 700 !important;
+  color: #000 !important;
+}
+.cart-wrapper {
+  display: inline-flex;
+  padding: 0px 4px 4px 4px;
+  align-items: center;
+  color: #6b7280;
+}
+.cart {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+}
+.cart-count {
+  margin: 8px 0px 0px 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+/* desktop navbar */
+/* mobile menu */
+.mobile-menu-wrapper {
+  display: flex;
+  align-items: center;
+}
+.mobile-menu-button {
+  display: inline-flex;
+  position: relative;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  color: #9ca3af;
+}
+#mobile-menu {
+  padding: 12px;
+  display: none;
+}
+.mobile-menu-link {
+  padding: 8px;
+}
+/* mobile menu */
+/* nav-css */
+
+/* footer-css */
+footer .wrapper {
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+footer h3,
+footer p {
+  font-size: 14px;
+  line-height: 24px;
+  color: whitesmoke;
+}
+/* footer-css */
+
+/* button */
+.btn {
+  display: flex;
+  padding: 8px 24px;
+  margin-top: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #3d83f0;
+}
+.btn:hover {
+  background-color: #2c77f0;
+}
+/* button */
+
+/* product-details and form shared css */
+.details-wrapper {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 32px auto 0 auto;
+  max-width: 42rem;
+  border: 1px solid black;
+}
+.details-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.details-container img {
+  grid-column: span 1 / span 1;
+}
+.detail-content {
+  grid-column: span 2 / span 2;
+}
+.detail-feature {
+  display: flex;
+}
+.detail-feature p {
+  color: black;
+  margin-right: 14px;
+}
+.detail-content hr {
+  margin-top: 15px;
+  margin-bottom: 12px;
+}
+.text-red {
+  font-size: 14px;
+  color: rgb(252, 47, 47);
+  margin-top: 4px;
+}
+.before-discount {
+  color: gray;
+  text-decoration-line: line-through;
+  margin-right: 8px;
+}
+/* product-details and form shared css */
+
+/* sm */
+@media (min-width: 640px) {
+  .nav-wrapper {
+    padding: 0px 16px;
+  }
+  .details-wrapper {
+    padding: 24px;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  footer ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .nav-wrapper {
+    padding: 0px 32px;
+  }
+  .brand-wrapper {
+    padding: 0;
+  }
+  .desktop-nav {
+    margin-left: 24px;
+    display: flex;
+  }
+  .mobile-menu-wrapper {
+    display: none;
+  }
+  #mobile-menu {
+    display: none;
+  }
+  .details-wrapper {
+    padding: 32px;
+    max-width: 80rem;
+  }
+  .details-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  footer .content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}

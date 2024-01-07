@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrinterPlaza</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      #features {
+        max-width: 80rem;
+        margin: 0 auto;
+      }
+      #features ul {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 60px;
+        margin: 48px auto;
+      }
+      #features li {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow:
+          0 1px 3px 0 rgb(0 0 0 / 0.1),
+          0 1px 2px -1px rgb(0 0 0 / 0.1);
+      }
+      #features .feature-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 0%;
+        padding: 32px;
+      }
+      #features img {
+        height: 24px;
+        width: 24px;
+        margin: 0 auto;
+        flex-shrink: 0;
+      }
+      #features dl {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 4px;
+      }
+      #features dt {
+        margin: 24px 0 12px 0;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      #features dd {
+        font-size: 14px;
+      }
+      @media (min-width: 640px) {
+        #features ul {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (min-width: 768px) {
+        #features ul {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      .featured-product {
+        padding-left: 24px;
+        padding-right: 24px;
+        margin: 24px auto 0 auto;
+        max-width: 80rem;
+      }
+
+      table {
+        border: 0.5px solid #646464;
+        border-radius: 4px;
+        width: 100%;
+      }
+      table tr {
+        padding: 0;
+      }
+      table .border-td {
+        border-right: 0.5px solid #646464;
+      }
+      table img {
+        width: 10rem;
+        padding: 4px;
+      }
+      @media (min-width: 640px) {
+        table img {
+          width: 9rem;
+          height: 9rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        .featured-product {
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- navbar -->
+      <header>
+        <nav>
+          <div class="nav-wrapper">
+            <div class="nav-list-wrapper">
+              <div class="brand-wrapper">
+                <a href="index.html" class="brand-content">
+                  <h3 class="brand">PrinterPlaza</h3>
+                </a>
+              </div>
+              <div class="desktop-nav">
+                <a class="active-link" href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about-us.html">About Us</a>
+                <a href="research.html">Research</a>
+                <a href="blogs.html">Blog</a>
+                <div class="cart-wrapper">
+                  <div onclick="onCartClick()" class="cart">
+                    <svg
+                      height="24px"
+                      width="24px"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span class="cart-count" id="cart_count">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-menu-wrapper">
+                <!-- Mobile menu button -->
+                <button
+                  type="button"
+                  id="mobile-menu-button"
+                  class="mobile-menu-button"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+                >
+                  <svg
+                    height="24px"
+                    width="24px"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                </button>
+                <!-- Mobile menu button -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile menu, show/hide based on menu state. -->
+          <div id="mobile-menu">
+            <div class="cart-wrapper">
+              <div onclick="onCartClick()" class="cart">
+                <svg
+                  height="24px"
+                  width="24px"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                  />
+                </svg>
+                <span class="cart-count" id="cart_count">0</span>
+              </div>
+            </div>
+            <div style="margin-top: 4px; padding: 8px 0 12px 0">
+              <div class="mobile-menu-link">
+                <a class="active-link" href="index.html">Home</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="products.html">Products</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="about-us.html">About Us</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="research.html">Research</a>
+              </div>
+              <div class="mobile-menu-link"><a href="blogs.html">Blog</a></div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- navbar -->
+
+      <!-- hero -->
+      <section class="hero">
+        <div style="position: relative">
+          <img style="width: 100%; height: 30rem" src="./assets/hero.png" />
+          <h2
+            style="
+              position: absolute;
+              inset: 0;
+              z-index: 20;
+              display: flex;
+              align-items: center;
+              color: white;
+              font-size: 52px;
+              font-weight: 700;
+              margin-left: 4rem;
+            "
+          >
+            Explore world class printers at<br />PrinterPlaza
+          </h2>
+          <div
+            style="
+              position: absolute;
+              z-index: 10;
+              height: 100%;
+              width: 100%;
+              background: black;
+              opacity: 0.6;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+            "
+          ></div>
+        </div>
+      </section>
+      <!-- hero -->
+
+      <!-- features -->
+      <section style="padding: 0 64px" id="features">
+        <ul role="list">
+          <li>
+            <div class="feature-wrapper">
+              <img src="./assets/Airplane.png" alt="Airplane icon" />
+              <dl>
+                <dt>Free Shipping</dt>
+                <dd>Seamless shopping, zero shipping cost</dd>
+              </dl>
+            </div>
+          </li>
+          <li>
+            <div class="feature-wrapper">
+              <img src="./assets/Money.png" alt="Money icon" />
+              <dl>
+                <dt>Cash on Delivery</dt>
+                <dd>Pay in cash upon delivery</dd>
+              </dl>
+            </div>
+          </li>
+          <li>
+            <div class="feature-wrapper">
+              <img src="./assets/Phone.png" alt="" />
+              <dl>
+                <dt>24 X 7 support</dt>
+                <dd>Assistance around the clock</dd>
+              </dl>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- features -->
+
+      <!-- featured product -->
+      <div style="padding: 32px 0px">
+        <div style="padding: 0 32px">
+          <div style="margin: 0 auto; max-width: 32rem; text-align: center">
+            <p
+              style="
+                margin: 8px 0;
+                font-size: 30px;
+                font-weight: 700;
+                color: black;
+              "
+            >
+              Featured Products
+            </p>
+            <p style="font-size: 18px; color: rgb(59, 59, 59)">
+              Unveiling Our Star Printer - A Masterpiece in Every Page.
+            </p>
+          </div>
+        </div>
+        <div class="featured-product">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <img src="./assets/Printer.png" alt="" />
+                </td>
+                <td class="border-td"></td>
+                <td style="padding: 8px">
+                  <h4 style="font-size: 18px; font-weight: bold">
+                    Canon Pixma TR150 Wireless Portable Color Printer
+                  </h4>
+                  <p style="margin-top: 4px; color: rgb(59, 59, 59)">
+                    Compact, lightweight and portable, ideal for mobile
+                    professionals who need to print high-quality business
+                    documents anytime, anywhere.
+                  </p>
+                  <button class="btn" onclick="addToCart()">Buy Now</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- featured product -->
+
+      <!-- explore now button -->
+      <div class="featured-product">
+        <div
+          style="
+            margin: 12px auto 32px auto;
+            max-width: 42rem;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+          "
+        >
+          <a
+            style="
+              color: #3d83f0;
+              border: 1px solid #3d83f0;
+              border-radius: 8px;
+              padding: 12px 16px;
+            "
+            href="products.html"
+            ><span style="margin-right: 8px">Explore More products</span
+            ><img src="./assets/ArrowRightBlue.png"
+          /></a>
+        </div>
+      </div>
+      <!-- explore now button -->
+
+      <!-- footer -->
+      <footer style="background-color: black" aria-labelledby="footer-heading">
+        <div class="wrapper">
+          <div class="content-wrapper">
+            <div style="display: flex; align-items: center">
+              <h1 style="font-size: 36px; font-weight: 700; color: white">
+                PrinterPlaza
+              </h1>
+            </div>
+            <ul role="list">
+              <li>
+                <a href="index.html">
+                  <h3>Home</h3>
+                  <p>Landing Page with featured products</p>
+                </a>
+              </li>
+              <li>
+                <a href="products.html">
+                  <h3>Products</h3>
+                  <p>List of products we sell</p>
+                </a>
+              </li>
+              <li>
+                <a href="about-us.html">
+                  <h3>About Us</h3>
+                  <p>Portfolio of team members</p>
+                </a>
+              </li>
+              <li>
+                <a href="research.html">
+                  <h3>Research</h3>
+                  <p>Detailed description about the references</p>
+                </a>
+              </li>
+              <li>
+                <a href="blogs.html">
+                  <h3>Blog</h3>
+                  <p>How technology has affected daily life in business</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- footer -->
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

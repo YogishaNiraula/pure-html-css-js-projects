@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrinterPlaza-About Us</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      .hero img {
+        height: 35rem;
+        width: 100%;
+      }
+      .team-wrapper {
+        padding: 64px 16px;
+        max-width: 42rem;
+        margin: 0 auto;
+      }
+      .team-container {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+      .team-container img {
+        display: inline-block;
+        border-radius: 100%;
+        height: 240px;
+        width: 240px;
+        grid-column: span 1 / span 1;
+      }
+      .team-container p {
+        color: black;
+        font-size: 16px;
+      }
+      hr {
+        margin: 8px 0;
+      }
+      ul {
+        margin-left: 16px;
+      }
+
+      @media (min-width: 640px) {
+        .team-wrapper {
+          padding: 96px 24px;
+        }
+        .team-container {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .team-wrapper {
+          padding-left: 32px;
+          padding-right: 32px;
+          max-width: 80rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- navbar -->
+      <header>
+        <nav>
+          <div class="nav-wrapper">
+            <div class="nav-list-wrapper">
+              <div class="brand-wrapper">
+                <a href="index.html" class="brand-content">
+                  <h3 class="brand">PrinterPlaza</h3>
+                </a>
+              </div>
+              <div class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a class="active-link" href="about-us.html">About Us</a>
+                <a href="research.html">Research</a>
+                <a href="blogs.html">Blog</a>
+                <div class="cart-wrapper">
+                  <div onclick="onCartClick()" class="cart">
+                    <svg
+                      height="24px"
+                      width="24px"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span class="cart-count" id="cart_count">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-menu-wrapper">
+                <!-- Mobile menu button -->
+                <button
+                  type="button"
+                  id="mobile-menu-button"
+                  class="mobile-menu-button"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+                >
+                  <svg
+                    height="24px"
+                    width="24px"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                </button>
+                <!-- Mobile menu button -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile menu, show/hide based on menu state. -->
+          <div id="mobile-menu">
+            <div class="cart-wrapper">
+              <div onclick="onCartClick()" class="cart">
+                <svg
+                  height="24px"
+                  width="24px"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                  />
+                </svg>
+                <span class="cart-count" id="cart_count">0</span>
+              </div>
+            </div>
+            <div style="margin-top: 4px; padding: 8px 0 12px 0">
+              <div class="mobile-menu-link">
+                <a href="index.html">Home</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="products.html">Products</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a class="active-link" href="about-us.html">About Us</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="research.html">Research</a>
+              </div>
+              <div class="mobile-menu-link"><a href="blogs.html">Blog</a></div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- navbar -->
+
+      <!-- hero -->
+      <div class="hero">
+        <img src="./assets/about-us.png" alt="" />
+      </div>
+      <!-- hero -->
+
+      <!-- about the team -->
+      <div class="team-wrapper">
+        <div class="team-container">
+          <img src="./assets/me.png" alt="Baibhav Jha" />
+          <div style="grid-column: span 2 / span 2">
+            <div style="margin-bottom: 16px">
+              <h1>Baibhav Jha</h1>
+              <hr />
+              <p>
+                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+              </p>
+            </div>
+            <div style="margin-bottom: 16px">
+              <h2>Technical Skills</h2>
+              <hr />
+              <ul role="list">
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+              </ul>
+            </div>
+            <div style="margin-bottom: 16px">
+              <h2>Soft Skills</h2>
+              <hr />
+              <ul role="list">
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+              </ul>
+            </div>
+            <div style="margin-bottom: 16px">
+              <h2>Educational background</h2>
+              <hr />
+              <ul role="list">
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+                <li>
+                  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- about the team -->
+
+      <!-- footer -->
+      <footer style="background-color: black" aria-labelledby="footer-heading">
+        <div class="wrapper">
+          <div class="content-wrapper">
+            <div style="display: flex; align-items: center">
+              <h1 style="font-size: 36px; font-weight: 700; color: white">
+                PrinterPlaza
+              </h1>
+            </div>
+            <ul role="list">
+              <li>
+                <a href="index.html">
+                  <h3>Home</h3>
+                  <p>Landing Page with featured products</p>
+                </a>
+              </li>
+              <li>
+                <a href="products.html">
+                  <h3>Products</h3>
+                  <p>List of products we sell</p>
+                </a>
+              </li>
+              <li>
+                <a href="about-us.html">
+                  <h3>About Us</h3>
+                  <p>Portfolio of team members</p>
+                </a>
+              </li>
+              <li>
+                <a href="research.html">
+                  <h3>Research</h3>
+                  <p>Detailed description about the references</p>
+                </a>
+              </li>
+              <li>
+                <a href="blogs.html">
+                  <h3>Blog</h3>
+                  <p>How technology has affected daily life in business</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- footer -->
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

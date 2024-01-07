@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrinterPlaza-Blogs</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      .hero img {
+        height: 35rem;
+        width: 100%;
+      }
+      article {
+        padding: 64px 16px;
+        max-width: 42rem;
+        margin: 0 auto;
+      }
+
+      .article-info {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+      }
+      .article-info p {
+        margin-right: 12px;
+      }
+      .article-content p {
+        margin-top: 16px;
+        font-size: 16px;
+        color: rgb(23, 23, 23);
+      }
+      .article-content ul {
+        margin: 16px 0 0 16px;
+      }
+      .article-content li {
+        margin-top: 8px;
+      }
+
+      @media (min-width: 640px) {
+        article {
+          padding: 96px 24px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        article {
+          padding-left: 32px;
+          padding-right: 32px;
+          max-width: 80rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- navbar -->
+      <header>
+        <nav>
+          <div class="nav-wrapper">
+            <div class="nav-list-wrapper">
+              <div class="brand-wrapper">
+                <a href="index.html" class="brand-content">
+                  <h3 class="brand">PrinterPlaza</h3>
+                </a>
+              </div>
+              <div class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about-us.html">About Us</a>
+                <a href="research.html">Research</a>
+                <a class="active-link" href="blogs.html">Blog</a>
+                <div class="cart-wrapper">
+                  <div onclick="onCartClick()" class="cart">
+                    <svg
+                      height="24px"
+                      width="24px"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span class="cart-count" id="cart_count">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-menu-wrapper">
+                <!-- Mobile menu button -->
+                <button
+                  type="button"
+                  id="mobile-menu-button"
+                  class="mobile-menu-button"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+                >
+                  <svg
+                    height="24px"
+                    width="24px"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                </button>
+                <!-- Mobile menu button -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile menu, show/hide based on menu state. -->
+          <div id="mobile-menu">
+            <div class="cart-wrapper">
+              <div onclick="onCartClick()" class="cart">
+                <svg
+                  height="24px"
+                  width="24px"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                  />
+                </svg>
+                <span class="cart-count" id="cart_count">0</span>
+              </div>
+            </div>
+            <div style="margin-top: 4px; padding: 8px 0 12px 0">
+              <div class="mobile-menu-link">
+                <a href="index.html">Home</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="products.html">Products</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="about-us.html">About Us</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="research.html">Research</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a class="active-link" href="blogs.html">Blog</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- navbar -->
+
+      <!-- hero -->
+      <div class="hero">
+        <img src="./assets/blog.png" alt="blog" />
+      </div>
+      <!-- hero -->
+
+      <!-- blog -->
+      <article>
+        <h2>
+          The Transformative Impact of Technology on Daily Life and Business
+        </h2>
+        <div class="article-info">
+          <p><strong>Author: </strong>John Doe</p>
+          <p><strong>Published at: </strong>2nd January 2024</p>
+        </div>
+        <div class="article-content">
+          <p>
+            In the fast-paced digital era, technology has become an inseparable
+            part of our daily lives, revolutionizing the way we live, work, and
+            conduct business. The transformative effects of technology have not
+            only made our personal lives more convenient but have also reshaped
+            the landscape of industries worldwide.
+          </p>
+          <p>
+            One of the most profound ways technology has impacted daily life is
+            through the advent of smartphones. These pocket-sized devices have
+            evolved into powerful tools that connect us with the world in ways
+            unimaginable just a few decades ago. From instant communication
+            through social media and messaging apps to accessing a wealth of
+            information at our fingertips, smartphones have become
+            indispensable. Additionally, the rise of mobile applications has
+            streamlined various aspects of our lives, from banking and shopping
+            to health monitoring and entertainment.
+          </p>
+          <p>
+            In the realm of business, technology has brought about significant
+            changes, fostering innovation and efficiency. The widespread
+            adoption of cloud computing has revolutionized the way companies
+            store, process, and manage data. This not only enhances
+            collaboration among employees but also allows businesses to scale
+            their operations seamlessly. Moreover, the rise of e-commerce has
+            transformed the retail landscape, providing consumers with a
+            convenient and efficient way to shop, while businesses can reach a
+            global audience without the need for a physical presence. The
+            integration of artificial intelligence and machine learning has
+            further optimized business processes, enabling data-driven
+            decision-making and predictive analytics.
+          </p>
+          <p>
+            Here are three key areas where technology has left an indelible
+            mark:
+          </p>
+          <ul role="list">
+            <li>
+              <strong>Communication:</strong> The evolution of communication
+              technology has made the world a smaller place. Video conferencing
+              tools, instant messaging apps, and social media platforms have
+              facilitated real-time interaction, breaking down geographical
+              barriers and enhancing collaboration in both personal and
+              professional spheres.
+            </li>
+            <li>
+              <strong>Automation:</strong> Technology has automated many routine
+              tasks, freeing up time for individuals and businesses to focus on
+              more complex and creative endeavors. Automated processes, from
+              manufacturing to customer service, have not only increased
+              efficiency but also reduced the margin for error.
+            </li>
+            <li>
+              <strong>Global Connectivity:</strong> The internet has created a
+              global marketplace, connecting businesses and consumers worldwide.
+              E-commerce platforms, online marketplaces, and digital marketing
+              have allowed businesses to expand their reach beyond borders,
+              fostering a more interconnected and competitive global economy.
+            </li>
+          </ul>
+
+          <p>
+            In conclusion, technology has become an integral part of our daily
+            lives, reshaping the way we communicate, work, and conduct business.
+            As we continue to embrace technological advancements, it is
+            essential to navigate the challenges and leverage the opportunities
+            that arise, ensuring a harmonious integration of technology into our
+            evolving society.
+          </p>
+        </div>
+      </article>
+      <!-- blog -->
+
+      <!-- footer -->
+      <footer style="background-color: black" aria-labelledby="footer-heading">
+        <div class="wrapper">
+          <div class="content-wrapper">
+            <div style="display: flex; align-items: center">
+              <h1 style="font-size: 36px; font-weight: 700; color: white">
+                PrinterPlaza
+              </h1>
+            </div>
+            <ul role="list">
+              <li>
+                <a href="index.html">
+                  <h3>Home</h3>
+                  <p>Landing Page with featured products</p>
+                </a>
+              </li>
+              <li>
+                <a href="products.html">
+                  <h3>Products</h3>
+                  <p>List of products we sell</p>
+                </a>
+              </li>
+              <li>
+                <a href="about-us.html">
+                  <h3>About Us</h3>
+                  <p>Portfolio of team members</p>
+                </a>
+              </li>
+              <li>
+                <a href="research.html">
+                  <h3>Research</h3>
+                  <p>Detailed description about the references</p>
+                </a>
+              </li>
+              <li>
+                <a href="blogs.html">
+                  <h3>Blog</h3>
+                  <p>How technology has affected daily life in business</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- footer -->
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

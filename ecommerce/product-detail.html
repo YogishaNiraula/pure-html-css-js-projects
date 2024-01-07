@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrinterPlaza-Product Detail</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      li {
+        margin: 8px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- navbar -->
+      <header>
+        <nav>
+          <div class="nav-wrapper">
+            <div class="nav-list-wrapper">
+              <div class="brand-wrapper">
+                <a href="index.html" class="brand-content">
+                  <h3 class="brand">PrinterPlaza</h3>
+                </a>
+              </div>
+              <div class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a class="active-link" href="products.html">Products</a>
+                <a href="about-us.html">About Us</a>
+                <a href="research.html">Research</a>
+                <a href="blogs.html">Blog</a>
+                <div class="cart-wrapper">
+                  <div onclick="onCartClick()" class="cart">
+                    <svg
+                      height="24px"
+                      width="24px"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span class="cart-count" id="cart_count">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-menu-wrapper">
+                <!-- Mobile menu button -->
+                <button
+                  type="button"
+                  id="mobile-menu-button"
+                  class="mobile-menu-button"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+                >
+                  <svg
+                    height="24px"
+                    width="24px"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                </button>
+                <!-- Mobile menu button -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile menu, show/hide based on menu state. -->
+          <div id="mobile-menu">
+            <div class="cart-wrapper">
+              <div onclick="onCartClick()" class="cart">
+                <svg
+                  height="24px"
+                  width="24px"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                  />
+                </svg>
+                <span class="cart-count" id="cart_count">0</span>
+              </div>
+            </div>
+            <div style="margin-top: 4px; padding: 8px 0 12px 0">
+              <div class="mobile-menu-link">
+                <a class="active-link" href="index.html">Home</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="products.html">Products</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="about-us.html">About Us</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="research.html">Research</a>
+              </div>
+              <div class="mobile-menu-link"><a href="blogs.html">Blog</a></div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- navbar -->
+
+      <!-- product details -->
+      <div style="padding: 44px 20px 44px 20px">
+        <div class="details-wrapper">
+          <div class="details-container">
+            <img src="./assets/Printer.png" alt="printer" />
+            <div class="detail-content">
+              <h1>Canon Pixma TR150 Wireless Portable Colour Printer</h1>
+              <div class="detail-feature">
+                <p><strong>Brand: </strong>Canon</p>
+                <p><strong>Category: </strong>Portable</p>
+              </div>
+              <hr />
+              <div style="margin-top: 12px">
+                <p class="text-red">NRs. 63,000</p>
+                <p class="text-red">
+                  <span class="before-discount">NRs. 70,000</span>-10%
+                </p>
+                <button type="button" onclick="addToCart()" class="btn">
+                  Buy Now
+                </button>
+                <hr />
+                <!-- Product details -->
+
+                <div style="margin-top: 32px">
+                  <h2 style="font-size: 14px; font-weight: 700">
+                    Product details of Canon Pixma TR150 Wireless Portable
+                    Colour Printer
+                  </h2>
+
+                  <div style="margin: 16px 0 0 16px">
+                    <ul role="list">
+                      <li>Model Name: TR150</li>
+                      <li>Functionality: Print</li>
+                      <li>
+                        Connectivity: Wireless/Wi-Fi, Wireless Pictbridge, USB
+                        2.0, USB Type C, AirPrint, Mopria
+                      </li>
+                      <li>Print Speed: 9.0 ipm (Black)/ 5.5 ipm (Colour)</li>
+                      <li>Print Resolution: 4800*1200 dpi</li>
+                      <li>
+                        Ink Cartridge Included: PGI-35 (Black) 200 pages and
+                        CLI-36 (Color) 200 pages
+                      </li>
+                      <li>Included: Rechargeable Battery, USB Charger</li>
+                      <li>PC Operating System: Windows OS and Mac OS</li>
+                      <li>Mobile Operating System: iOS, Android, Windows</li>
+                      <li>
+                        Smart Assistant and Auto Support: Amazon Alexa, Google
+                        Assistant
+                      </li>
+                      <li>
+                        Canon TR150 Mobile Printer, Canon TR150 Portable Printer
+                      </li>
+                      <li>Manufacturer: Canon Inc</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- product details -->
+
+      <!-- footer -->
+      <footer style="background-color: black" aria-labelledby="footer-heading">
+        <div class="wrapper">
+          <div class="content-wrapper">
+            <div style="display: flex; align-items: center">
+              <h1 style="font-size: 36px; font-weight: 700; color: white">
+                PrinterPlaza
+              </h1>
+            </div>
+            <ul role="list">
+              <li>
+                <a href="index.html">
+                  <h3>Home</h3>
+                  <p>Landing Page with featured products</p>
+                </a>
+              </li>
+              <li>
+                <a href="products.html">
+                  <h3>Products</h3>
+                  <p>List of products we sell</p>
+                </a>
+              </li>
+              <li>
+                <a href="about-us.html">
+                  <h3>About Us</h3>
+                  <p>Portfolio of team members</p>
+                </a>
+              </li>
+              <li>
+                <a href="research.html">
+                  <h3>Research</h3>
+                  <p>Detailed description about the references</p>
+                </a>
+              </li>
+              <li>
+                <a href="blogs.html">
+                  <h3>Blog</h3>
+                  <p>How technology has affected daily life in business</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- footer -->
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

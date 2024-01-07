@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrinterPlaza-Research</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      .hero img {
+        height: 35rem;
+        width: 100%;
+      }
+      .research-wrapper {
+        padding: 64px 16px;
+        max-width: 42rem;
+        margin: 0 auto;
+      }
+      ul {
+        list-style-type: none;
+      }
+      figcaption {
+        text-align: center;
+      }
+      li {
+        margin-bottom: 32px;
+      }
+      li > p {
+        margin: 8px 0;
+        font-size: 16px;
+      }
+
+      figure img {
+        height: 100%;
+        width: 20rem;
+      }
+      @media (min-width: 640px) {
+        .research-wrapper {
+          padding: 96px 24px;
+        }
+        figure img {
+          width: 100%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .research-wrapper {
+          padding-left: 32px;
+          padding-right: 32px;
+          max-width: 80rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- navbar -->
+      <header>
+        <nav>
+          <div class="nav-wrapper">
+            <div class="nav-list-wrapper">
+              <div class="brand-wrapper">
+                <a href="index.html" class="brand-content">
+                  <h3 class="brand">PrinterPlaza</h3>
+                </a>
+              </div>
+              <div class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about-us.html">About Us</a>
+                <a class="active-link" href="research.html">Research</a>
+                <a href="blogs.html">Blog</a>
+                <div class="cart-wrapper">
+                  <div onclick="onCartClick()" class="cart">
+                    <svg
+                      height="24px"
+                      width="24px"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <span class="cart-count" id="cart_count">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-menu-wrapper">
+                <!-- Mobile menu button -->
+                <button
+                  type="button"
+                  id="mobile-menu-button"
+                  class="mobile-menu-button"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+                >
+                  <svg
+                    height="24px"
+                    width="24px"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                </button>
+                <!-- Mobile menu button -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile menu, show/hide based on menu state. -->
+          <div id="mobile-menu">
+            <div class="cart-wrapper">
+              <div onclick="onCartClick()" class="cart">
+                <svg
+                  height="24px"
+                  width="24px"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                  />
+                </svg>
+                <span class="cart-count" id="cart_count">0</span>
+              </div>
+            </div>
+            <div style="margin-top: 4px; padding: 8px 0 12px 0">
+              <div class="mobile-menu-link">
+                <a href="index.html">Home</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="products.html">Products</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a href="about-us.html">About Us</a>
+              </div>
+              <div class="mobile-menu-link">
+                <a class="active-link" href="research.html">Research</a>
+              </div>
+              <div class="mobile-menu-link"><a href="blogs.html">Blog</a></div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- navbar -->
+
+      <!-- hero -->
+      <div class="hero">
+        <img src="./assets/research.png" alt="" />
+      </div>
+      <!-- hero -->
+
+      <div class="research-wrapper">
+        <ul role="list">
+          <li>
+            <h4>1. Price Tag and Discount Component (Inspired by Daraz):</h4>
+            <p>
+              The product page's pricing structure and discount presentation
+              draw inspiration from Daraz, incorporating specific design
+              elements to enhance user experience. Customizations have been made
+              to align with the printer e-commerce website's unique needs.
+            </p>
+            <figure>
+              <img
+                src="./assets/research-1.png"
+                alt="Price Tag and Discount Component"
+              />
+              <figcaption>
+                Figure 1: Price tag and Discount Component Inspiration
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <h4>
+              2. Brand Name of the Product Component (Inspired by Amazon):
+            </h4>
+            <p>
+              Inspired by Amazon's approach, the presentation of brand names on
+              the product page contributes to the website's branding and
+              credibility. User interface and experience considerations
+              influenced by Amazon are seamlessly integrated.
+            </p>
+            <figure>
+              <img
+                src="./assets/research-2.png"
+                alt="Brand Name of the Product Component"
+              />
+              <figcaption>
+                Figure 2: Brand Name of Product Component Inspiration
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <h4>3. Product Description Component (Inspired by NewEgg):</h4>
+            <p>
+              The product description component takes inspiration from NewEgg,
+              borrowing specific features and design elements. Adaptations have
+              been made to tailor this approach to the printer e-commerce
+              website, ensuring a compelling presentation.
+            </p>
+            <figure>
+              <img
+                src="./assets/research-3.png"
+                alt="Price Tag and Discount Component"
+              />
+              <figcaption>
+                Figure 3: Product Description Component Inspiration
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <h4>4. Checkout Form Component (Inspired by Stripe):</h4>
+            <p>
+              The integration of the checkout form component is influenced by
+              Stripe's user-friendly design and secure payment processing. The
+              website incorporates Stripe's best practices while implementing
+              additional security measures for a seamless and trustworthy
+              checkout experience.
+            </p>
+            <figure>
+              <img
+                src="./assets/research-4.png"
+                alt="Checkout Form Component"
+              />
+              <figcaption>
+                Figure 4: Checkout Form Component Inspiration
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <h4>5. Blog Section (Inspired by Jupiter Blog):</h4>
+            <p>
+              The design and content presentation in the blog section are
+              inspired by Jupiter Blog. Layout considerations and content
+              structuring draw from Jupiter's approach, with adjustments made to
+              align with the specific audience and content goals of the printer
+              e-commerce website.
+            </p>
+            <figure>
+              <img src="./assets/research-5.png" alt="Blog Section" />
+              <figcaption>
+                Figure 5: Checkout Form Component Inspiration
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+      <!-- footer -->
+      <footer style="background-color: black" aria-labelledby="footer-heading">
+        <div class="wrapper">
+          <div class="content-wrapper">
+            <div style="display: flex; align-items: center">
+              <h1 style="font-size: 36px; font-weight: 700; color: white">
+                PrinterPlaza
+              </h1>
+            </div>
+            <ul role="list">
+              <li>
+                <a href="index.html">
+                  <h3>Home</h3>
+                  <p>Landing Page with featured products</p>
+                </a>
+              </li>
+              <li>
+                <a href="products.html">
+                  <h3>Products</h3>
+                  <p>List of products we sell</p>
+                </a>
+              </li>
+              <li>
+                <a href="about-us.html">
+                  <h3>About Us</h3>
+                  <p>Portfolio of team members</p>
+                </a>
+              </li>
+              <li>
+                <a href="research.html">
+                  <h3>Research</h3>
+                  <p>Detailed description about the references</p>
+                </a>
+              </li>
+              <li>
+                <a href="blogs.html">
+                  <h3>Blog</h3>
+                  <p>How technology has affected daily life in business</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- footer -->
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
